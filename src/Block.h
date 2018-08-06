@@ -9,13 +9,13 @@
 
 class Block
 {
+    int m_index;
+
     QByteArray m_preHash;
 
     QHash<QByteArray, Transaction> m_transactions;
 
     BigInt m_solution;
-
-    int m_index;
 
     QByteArray m_cachedBlockHash;
 

@@ -122,7 +122,7 @@ void Bingot::Transfer(const QByteArray &toAddress, unsigned int amount)
         return;
     }
 
-    int total = m_blockChain.getAccountAmount(m_address);
+    unsigned int total = m_blockChain.getAccountAmount(m_address);
 
     foreach(const Transaction &t, m_suggestedTransactions)
     {

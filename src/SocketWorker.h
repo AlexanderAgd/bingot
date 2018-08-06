@@ -18,8 +18,8 @@ public:
     void stop();
 
 private:
-    NetworkEngine *m_networkEngine;
     NetworkTaskQueue *m_taskQueue;
+    NetworkEngine *m_networkEngine;
     bool m_hasTaskFinished;
     bool m_stop;
     QTcpSocket *m_socket;

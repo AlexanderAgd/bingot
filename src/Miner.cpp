@@ -51,7 +51,7 @@ void Miner::run()
     BigInt solution(m_begin);
     QElapsedTimer timer;
     timer.start();
-    for(int i = m_begin; ((i < m_end) && !m_stop); ++i)
+    for(unsigned int i = m_begin; ((i < m_end) && !m_stop); ++i)
     {
         solution.increase();
         QByteArray data;

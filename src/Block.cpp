@@ -27,8 +27,8 @@ Block::Block(int index)
 
 Block::Block(int index, const QHash<QByteArray, Transaction> &transactions, const QByteArray &preHash)
     :m_index(index),
-      m_transactions(transactions),
       m_preHash(preHash),
+      m_transactions(transactions),
       m_solution(0)
 {
 }
@@ -120,7 +120,7 @@ bool Block::isValid()
 
     QByteArray result = sha512.result();
 
-    int zeroCount = Miner::countLeadingZeros(result);
+    unsigned int zeroCount = Miner::countLeadingZeros(result);
 
     unsigned int target = Block::getTarget(m_index);
 
@@ -143,6 +143,8 @@ bool Block::isValid()
     {
         return false;
     }
+
+    return true;
 }
 
 const QByteArray &Block::getPreHash() const
