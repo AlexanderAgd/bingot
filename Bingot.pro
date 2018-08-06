@@ -10,6 +10,9 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = bingot
 TEMPLATE = app
+OBJECTS_DIR += obj
+MOC_DIR += moc
+VPATH += src
 
 
 SOURCES += main.cpp\
@@ -41,5 +44,3 @@ FORMS    +=
 INCLUDEPATH += /usr/include/crypto++
 LIBS += -lcrypto++
 
-OBJECTS_DIR += obj
-MOC_DIR += moc
