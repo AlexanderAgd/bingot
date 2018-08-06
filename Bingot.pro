@@ -3,13 +3,12 @@
 # Project created by QtCreator 2014-08-14T09:49:22
 #
 #-------------------------------------------------
-QMAKE_MAC_SDK = macosx10.9
 
 QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = Bingot
+TARGET = bingot
 TEMPLATE = app
 
 
@@ -39,11 +38,8 @@ HEADERS  += \
 
 FORMS    +=
 
+INCLUDEPATH += /usr/include/crypto++
+LIBS += -lcrypto++
 
-
-macx: LIBS += -L$$PWD/../code/cryptopp562/ -lcryptopp
-
-INCLUDEPATH += $$PWD/../code/cryptopp562
-DEPENDPATH += $$PWD/../code/cryptopp562
-
-macx: PRE_TARGETDEPS += $$PWD/../code/cryptopp562/libcryptopp.a
+OBJECTS_DIR += obj
+MOC_DIR += moc
